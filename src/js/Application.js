@@ -10,16 +10,10 @@ export default class Application extends EventEmitter {
 
   constructor() {
     super();
-
-    // const button = document.querySelector(".button");
-    // button.addEventListener("click", () => {
-    //   alert("💣");
-    // });
-
   
     const lyrics = ["Ah", "ha", "ha", "ha", "stayin\' alive", "stayin\' alive"];
     let count=0;
-    // this._beat = new Beat();s
+    this._beat = new Beat();
     this._beat.addListener(Beat.events.BIT,() =>this._create(lyrics[count>lyrics.length-1?count=0:count++]));
     this.emit(Application.events.READY);
   }
